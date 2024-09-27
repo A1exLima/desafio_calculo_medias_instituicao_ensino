@@ -39,12 +39,10 @@ def media_sprints(array_sprints):
 
 
 def media_semester(weighting, averages):
-    sum_weighting = sum(weighting.values())
-
     MSem = (
-        (averages[0] * weighting.get('W_MCPSem')) +
-        (averages[1] * weighting.get('W_MSSem')) +
-        (averages[2] * weighting.get('W_GSSem'))
-    ) / sum_weighting
+        (averages.get('MCPSem') * weighting.get('MCPSem')) +
+        (averages.get('MSSem') * weighting.get('MSSem')) +
+        (averages.get('GSSem') * weighting.get('GSSem'))
+    ) / sum(weighting.values())
 
     return MSem

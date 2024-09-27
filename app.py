@@ -17,7 +17,9 @@ GS1Sem = universal_input('prova semestral', 1)
 GS1Sem = GS1Sem[0]
 
 # Média ponderada do (1º) primeiro semestre
-weighting = {'W_MCPSem': 2, 'W_MSSem': 2, 'W_GSSem': 6}
-first_semester_averages = [MCP1Sem, MS1Sem, GS1Sem]
+weighting = {'MCPSem': 2, 'MSSem': 2, 'GSSem': 6}
+first_semester_averages = {'MCPSem': MCP1Sem, 'MSSem': MS1Sem, 'GSSem': GS1Sem}
 M1Sem = media_semester(weighting, first_semester_averages)
 print(f'\nMédia do primeiro semestre {M1Sem:.2f}')
+
+print(f'--------------------------  SEGUNDO SEMESTRE')
