@@ -46,3 +46,15 @@ def media_semester(weighting, averages):
     ) / sum(weighting.values())
 
     return MSem
+
+def media_annual(weighting, averages):
+    Ma = (
+        (averages.get('M1Sem') * weighting.get('M1Sem')) +
+        (averages.get('M2Sem') * weighting.get('M2Sem'))
+    ) / sum(weighting.values())
+
+    return Ma
+
+def average_final_exam_score(Ma, Ne):
+    Mf = (Ma + Ne) / 2
+    return Mf

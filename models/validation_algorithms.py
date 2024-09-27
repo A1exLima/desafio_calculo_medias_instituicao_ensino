@@ -1,5 +1,6 @@
 def validate_character(value):
-    validate = value.isdigit()
+    validate = all(char.isdigit() or char == '.' for char in value)
+
 
     if validate == True:
         note = float(value)
@@ -26,3 +27,22 @@ def validate_note(note):
             pass
 
     return note
+
+
+def validation_status(Ma, revalidation=False):
+    status = ''
+
+    match Ma:
+        case _ if Ma >= 6:
+            status = 'Aprovado'
+
+        case _ if Ma <= 4:
+            status = 'Reprovado'
+
+        case _ if Ma >= 4 and Ma <= 5.9:
+            if revalidation:
+                status = f'Aprovado' if Ma >= 6 else f'Reprovado'
+            else:
+                status = 'Exame'
+
+    return status
