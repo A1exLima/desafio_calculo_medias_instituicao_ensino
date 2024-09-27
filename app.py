@@ -90,6 +90,8 @@ def main():
             status = input('Digite "S" para SIM ou "N" para NÃO: ').upper()
             continue_program = continue_or_stop_program(status)
 
+    print(f'\nObrigado por utilizar o nosso programa!')
+
 
 if __name__ == "__main__":
     main()
