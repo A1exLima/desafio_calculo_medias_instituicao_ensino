@@ -1,8 +1,27 @@
 from models.validation_algorithms import validate_note
 
-def checkPointInput():
-    CP1 = validate_note(input(f'\nDigite o checkpoint 1: '))
-    CP2 = validate_note(input(f'\nDigite o checkpoint 2: '))
-    CP3 = validate_note(input(f'\nDigite o checkpoint 3: '))
 
-    return CP1, CP2, CP3
+def check_pronoun(name):
+    checklist = ['checkpoint', 'sprint']
+
+    if name in checklist:
+        personal_pronoun = 'o'
+        return personal_pronoun
+    else:
+        personal_pronoun = 'a'
+        return personal_pronoun
+
+
+def universal_input(name_input, quantity_of_inputs):
+    inputs = []
+
+    for i in range(1, quantity_of_inputs + 1):
+        inputs.append(
+            validate_note(
+                input(
+                    f'\nDigite {check_pronoun(name_input)} {name_input}'
+                    f'{": " if quantity_of_inputs == 1 else f" {i}: "}'
+                )
+            )
+        )
+    return inputs
