@@ -25,3 +25,26 @@ def universal_input(name_input, quantity_of_inputs):
             )
         )
     return inputs
+
+
+def media_checkpoint(array_checkpoints):
+    array_checkpoints.remove(min(array_checkpoints))
+    media_checkpoint = sum(array_checkpoints) / len(array_checkpoints)
+    return media_checkpoint
+
+
+def media_sprints(array_sprints):
+    media_sprints = sum(array_sprints) / len(array_sprints)
+    return media_sprints
+
+
+def media_semester(weighting, averages):
+    sum_weighting = sum(weighting.values())
+
+    MSem = (
+        (averages[0] * weighting.get('W_MCPSem')) +
+        (averages[1] * weighting.get('W_MSSem')) +
+        (averages[2] * weighting.get('W_GSSem'))
+    ) / sum_weighting
+
+    return MSem
